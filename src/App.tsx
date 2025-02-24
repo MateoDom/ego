@@ -1,5 +1,5 @@
 import { Route, Routes } from "react-router";
-import { Navbar } from "./components";
+import { Navbar, Footer } from "./components";
 import Home from "./screens/home/Home";
 
 function App() {
@@ -9,6 +9,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
       </Routes>
+      <Footer/>
     </>
   );
 }
