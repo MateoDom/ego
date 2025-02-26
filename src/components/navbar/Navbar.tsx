@@ -1,8 +1,8 @@
-
 import { Link, useLocation } from "react-router";
 import Logo from "@/assets/logo.svg";
 import { cn } from "@/lib/utils";
 import { useState } from "react";
+import MenuSheet from "./MenuSheet";
 
 export function Navbar() {
   const [isOpen] = useState(false);
@@ -36,32 +36,8 @@ export function Navbar() {
             ))}
           </div> 
         </div>
-        <div className="flex items-center gap-2">
-            <span className="hidden md:block text-sm">Menu</span>
-          </div>
+        <MenuSheet />
       </div>
-
-      {/* Mobile Navigation */}
-      {isOpen && (
-        <div className="md:hidden">
-          <div className="space-y-1 px-4 pb-3 pt-2">
-            {navigation.map((item) => (
-              //   <Link
-              <>{item.name}</>
-              //     key={item.name}
-              //     href={item.href}
-              //     className={cn(
-              //       "block px-3 py-2 text-base font-medium text-gray-900",
-              //       pathname === item.href && "text-red-500",
-              //     )}
-              //     onClick={() => setIsOpen(false)}
-              //   >
-              //     {item.name}
-              //   </Link>
-            ))}
-          </div>
-        </div>
-      )}
     </nav>
   );
 }
